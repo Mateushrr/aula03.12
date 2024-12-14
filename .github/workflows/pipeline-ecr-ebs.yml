@@ -1,4 +1,4 @@
-name: pipeline-ecr-ebs
+name: integracao-ecr-eb
 
 on:
  push: 
@@ -29,7 +29,9 @@ jobs:
       cache: 'npm'
    - run: docker build -t $MODULE_FULLNAME $MODULE_NAME
    - run: docker tag $MODULE_FULLNAME:$TAG $REGISTRY_URL/$MODULE_FULLNAME:$TAG
-   - run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 992382805102.dkr.ecr.us-east-1.amazonaws.com
-   #aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $REGISTRY_URL
+   - run:  |
+       aws ecr get-login-password --region $AWS_REGION | \
+       docker login --username AWS --password-stdin $REGISTRY_URL
    - run: docker push $REGISTRY_URL/$MODULE_FULLNAME:$TAG
+   - uses: actions/upload-artifact@v4    
    
