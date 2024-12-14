@@ -12,7 +12,6 @@ env:
  AWS_REGION: ${{ vars.AWS_REGION }}
  PROJECT_NAME: ${{ vars.PROJECT_NAME }}
  MODULE_NAME: ${{ vars.MODULE_NAME }}
- MODULE_FULLNAME: ${{ vars.PROJECT_NAME }}/${{ vars.MODULE_NAME }}
  REGISTRY_URL: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{vars.AWS_REGION }}.amazonaws.com
  TAG: latest
  STACK_NAME: "64bit Amazon Linux 2 v3.5.7 running Docker"
