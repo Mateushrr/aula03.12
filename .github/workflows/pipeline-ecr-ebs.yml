@@ -10,6 +10,7 @@ env:
  AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
  AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
  AWS_REGION: ${{ vars.AWS_REGION }}
+ AWS_DEFAULT_REGION: ${{ vars.AWS_REGION }}
  PROJECT_NAME: ${{ vars.PROJECT_NAME }}
  MODULE_NAME: ${{ vars.MODULE_NAME }}
  REGISTRY_URL: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{vars.AWS_REGION }}.amazonaws.com
